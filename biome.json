@@ -15,5 +15,8 @@
         "noAccumulatingSpread": "off"
       }
     }
+  },
+  "files": {
+    "ignore": ["timingSafeEqual2.ts"]
   }
 }

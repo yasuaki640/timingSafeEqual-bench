@@ -2,6 +2,7 @@ import { timingSafeEqual } from "hono/utils/buffer";
 import { bench, describe } from "vitest";
 import { timingSafeEqual2 } from "./timingSafeEqual2";
 
+import { SHA256 as sha256CryptoJS } from "crypto-js";
 // positive
 describe("Benchmark large equal string", () => {
   const a = "127e6fbfe24a750e72930c220a8e138275656b8e5d8f48a98c3c92df2caba935";
@@ -72,17 +73,17 @@ describe("Benchmark equal false", () => {
   });
 });
 
-// describe("Benchmark equal true with hash function", () => {
-//   const a = true;
-//   const b = true;
-//
-//   bench("timingSafeEqual", async () => {
-//     await timingSafeEqual(a, b, (d: string) => sha256CryptoJS(d).toString());
-//   });
-//   bench("timingSafeEqual2", async () => {
-//     await timingSafeEqual2(a, b, (d: string) => d);
-//   });
-// });
+describe("Benchmark equal true with hash function", () => {
+  const a = true;
+  const b = true;
+
+  bench("timingSafeEqual", async () => {
+    await timingSafeEqual(a, b, (d: string) => sha256CryptoJS(d).toString());
+  });
+  bench("timingSafeEqual2", async () => {
+    await timingSafeEqual2(a, b, (d: string) => d);
+  });
+});
 
 describe("Benchmark different strings", () => {
   const a = "a";
