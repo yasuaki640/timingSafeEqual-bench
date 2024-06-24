@@ -1,0 +1,19 @@
+{
+  "name": "perf-accept-header",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "bench": "vitest bench --run",
+    "lint:fix": "biome check --write",
+    "ci": "biome ci"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.2",
+    "@types/node": "^20.14.6",
+    "vitest": "^1.6.0"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "dependencies": {
+    "hono": "^4.4.7"
+  }
+}
