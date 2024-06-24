@@ -29,8 +29,8 @@ jobs:
     - name: Install dependencies
       run: pnpm install --color
 
-#    - name: Check lint
-#      run: pnpm run ci
+    - name: Check lint
+      run: pnpm run ci
 
     - name: Run benchmarks
       run: pnpm run bench
