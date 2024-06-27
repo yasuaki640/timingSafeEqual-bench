@@ -81,7 +81,7 @@ describe("Benchmark equal true with hash function", () => {
     await timingSafeEqual(a, b, (d: string) => sha256CryptoJS(d).toString());
   });
   bench("timingSafeEqual2", async () => {
-    await timingSafeEqual2(a, b, (d: string) => d);
+    await timingSafeEqual2(a, b, (d: string) => sha256CryptoJS(d).toString());
   });
 });
 
